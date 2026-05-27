@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    ul {
+        list-style-type: none;
+    }
+    body {
+        font-family: "맑은 고딕", "돋움";
+        font-size: 100%;
+        background-image: url(hanji.jpg);
+        min-height: 100vh;
+    }
+    [class*="c_"] {
+        float: left;
+        padding: 10px;
+    }
+    [class*="c_"] {
+        width: 100%;
+    }
+
+    @media only screen and (min-width: 600px) {
+        .c_m_1 {width: 8.33%;}
+        .c_m_2 {width: 16.66%;}
+        .c_m_3 {width: 25%;}
+        .c_m_4 {width: 33.33%;}
+        .c_m_5 {width: 41.66%;}
+        .c_m_6 {width: 50%;}
+        .c_m_7 {width: 58.33%;}
+        .c_m_8 {width: 66.66%;}
+        .c_m_9 {width: 75%;}
+        .c_m_10 {width: 83.33%;}
+        .c_m_11 {width: 91.66%;}
+        .c_m_12 {width: 100%;}
+    }
+
+    @media only screen and (min-width: 768px) {
+        .c_1 {width: 8.33%;}
+        .c_2 {width: 16.66%;}
+        .c_3 {width: 25%;}
+        .c_4 {width: 33.33%;}
+        .c_5 {width: 41.66%;}
+        .c_6 {width: 50%;}
+        .c_7 {width: 58.33%;}
+        .c_8 {width: 66.66%;}
+        .c_9 {width: 75%;}
+        .c_10 {width: 83.33%;}
+        .c_11 {width: 91.66%;}
+        .c_12 {width: 100%;}
+    }
+    header {
+        height: 80px;
+        padding: 20px;
+        background-color: #1C1C1E;
+        color: #FFFFFF;
+    }
+    header h1 {
+        font-family: "궁서";
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    aside#menu {
+        color: #ffffff;
+        text-align: center;
+    }
+    aside#menu li {
+        padding: 10px;
+        margin: 5px 0 0 0;
+        background-color: #8B1E0F;
+    }
+    section#main {
+        margin-top: 10px;
+        background-color: rgba(255, 255, 255, 0.5) !important; /* 75% 투명도의 흰색 */
+        padding: 30px;
+        border-radius: 4px;
+        border: solid 5px #d3ae37;
+    }
+    section#main h1 {
+        font-family: "궁서";
+    }
+    section#main p {
+        padding: 5px;
+        font-size: 0.95em;
+        line-height: 130%;
+    }
+    aside#photos img {
+        width: 100%;
+    }
+    aside#photos li {
+        text-align: center;
+    }
+    footer {
+        height: 60px;
+        padding: 10px;
+        clear: both;
+        text-align: center;
+        background-color: #eeeeee;
+        position: sticky;
+        top: 100%;
+    }
+    a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+    a:hover {
+        font-weight: bold;
+    }
+    #achivement li{
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+    </style>
+</head>
+<body>
+    <header class="c_12">
+        <h1>왕조실록</h1>
+    </header>
+
+    <aside id="menu" class="c_m_3 c_3">
+        <ul>
+            <a href="index.html"><li>태조</li></a>
+            <a href="menu1.html"><li>태종</li></a>
+            <a href="menu2.html"><li><b>세종</b></li></a>
+            <a href="menu3.html"><li>영조</li></a>
+            <a href="menu4.html"><li>정조</li></a>
+        </ul>
+    </aside>
+
+    <section id="main" class="c_m_9 c_6">
+        <h1>세종대왕 (1418 ~ 1450)</h1>
+        <p>조선의 제4대 국왕인 세종대왕은 백성을 위한 정책 추진과 학문 장려를 바탕으로 정치, 경제, 과학, 문화 발전을 크게 이끈 국왕입니다. 집현전을 통해 우수한 인재를 양성하고 학문을 장려하여 국가의 문화적 기틀을 다졌습니다.</p>
+        <br><br>
+        <h3>대표 업적</h3>
+        <ul id="achivement">
+            <li>독창적인 문자 시스템인 '훈민정음' 창제 (1443년)</li>
+            <li>장영실 등 과학자들을 지원하여 측우기·양부일구 등 과학 기구 제작</li>
+            <li>집현전 활성화를 통한 학문 발전</li>
+            <li>4군 6진 개척을 통한 영토 확장 및 국방 강화</li>
+        </ul>
+    </section>
+
+    <aside id="photos" class="c_m_12 c_3">
+        <h4>포토갤러리</h4>
+        <ul>
+            <li><img src="sejong1.jpg"></li>
+            <li>세종대왕 어진</li>
+            <li><img src="sejong2.jpg"></li>
+            <li>훈민정음 해례본</li>
+        </ul>
+    </aside>
+
+    <footer class="c_12">
+        COPYRIGHT(C) 202334650 Kim Hyeon Tae All Rights Reserved
+    </footer>
+</body>
+</html>
