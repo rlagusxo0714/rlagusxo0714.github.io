@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대동여지도 페이지</title>
+    <style>
+       * { 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }  
+        body {
+            font-family: "맑은 고딕";
+            color: #2c2a29;               
+            background-image: url(hanji.jpg);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        [class*="c_"] {
+            float: left;
+            padding: 10px;
+        }
+        [class*="c_"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .c_m_1 {width: 8.33%;} .c_m_2 {width: 16.66%;} .c_m_3 {width: 25%;}
+            .c_m_4 {width: 33.33%;} .c_m_5 {width: 41.66%;} .c_m_6 {width: 50%;}
+            .c_m_7 {width: 58.33%;} .c_m_8 {width: 66.66%;} .c_m_9 {width: 75%;}
+            .c_m_10 {width: 83.33%;} .c_m_11 {width: 91.66%;} .c_m_12 {width: 100%;}
+        }
+        @media only screen and (max-width: 767px) {
+            #my_info { text-align: center; }
+            #sidebar { margin-bottom: 20px; } 
+        }
+
+        @media only screen and (min-width: 768px) {
+            .c_1 {width: 8.33%;} .c_2 {width: 16.66%;} .c_3 {width: 25%;}
+            .c_4 {width: 33.33%;} .c_5 {width: 41.66%;} .c_6 {width: 50%;}
+            .c_7 {width: 58.33%;} .c_8 {width: 66.66%;} .c_9 {width: 75%;}
+            .c_10 {width: 83.33%;} .c_11 {width: 91.66%;} .c_12 {width: 100%;}
+        }
+
+        .clear { clear: both; }
+
+        a:link, a:visited {
+            text-decoration: none;
+            color: white;
+        }
+        a:hover {
+            font-weight: bold;
+        }
+
+        header {
+            background-color: #232326; 
+            color: #ffffff;
+            padding: 20px 5% 0 5%;
+            border-bottom: 1px solid #702c2c;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        #my_info {
+            text-align: right;
+            color: #aaaaaa;
+        }
+
+        #main_menu {
+            text-align: center;
+            padding: 15px 0 0 0;
+        }
+        
+        #main_menu ul {
+            display: inline-block; 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #main_menu ul li {
+            display: inline-block;
+            position: relative; 
+            background: #3a3835; 
+            border: 1px solid #4a4845;
+            border-radius: 4px;
+            margin: 0 4px;
+            width: 150px;
+        }
+        #main_menu ul li a {
+            display: block;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        
+        #main_menu ul li:hover {
+            background: #702c2c; 
+        }
+
+        
+        #main_menu ul li:hover ul {
+            display: block;
+        }
+
+       
+        #main_menu ul li ul {
+            position: absolute;
+            top: 100%; 
+            left: -1px;
+            width: 150px; 
+            display: none;
+            z-index: 999;
+        }
+
+        
+        #main_menu ul li ul li {
+            background: #3a3835 !important; 
+            display: block;
+            width: 100%;
+            margin: 0;
+            border-top: none;
+        }
+
+        
+        #main_menu ul li ul li a {
+            display: block !important;
+            padding: 10px 0;
+            font-size: 11px;
+            color: #ffffff  ;
+            font-weight: normal;
+        }
+
+       
+        #main_menu ul li ul li:hover {
+            background: #702c2c !important; 
+        }
+        #main_menu ul li ul li:hover a {
+            color: white;
+        }
+        main { 
+            max-width: 1100px; 
+            width: 90%;
+            margin: 40px auto; 
+        }
+
+        
+        #sidebar {
+            background-color: #f4eedf; 
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #c8bda3;
+        }
+        .sub_menu_title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #702c2c; 
+            color: #2c2a29;
+        }
+        .sub_menu_list li {
+            margin-bottom: 8px;
+            list-style-type: none;
+        }
+        .sub_menu_list a {
+            display: block;
+            padding: 10px 12px;
+            background-color: #ffffff; 
+            border-radius: 5px;
+            border: 1px solid #c8bda3;
+            font-weight: bold;
+            color: #2c2a29;
+        }
+        .sub_menu_list a:hover {
+            background-color: #702c2c;
+            color: white; 
+        }
+
+        #content_body {
+            background-color: #fcfaf5;
+            border-radius: 8px;
+            min-height: 400px;
+            padding: 30px;
+            border: 1px solid #c8bda3;
+            
+        }
+        #content_body h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e3d7bf;
+            padding-bottom: 10px;
+            color: #1c1c1e;
+        }
+        #content_body p {
+            color: #2c2a29;
+            font-size: 13px;
+            line-height: 1.8;
+            padding: 5px 0;
+            font-weight: bold;
+        }
+
+        #content_body li {
+            margin-left: 25px;
+        }
+
+        .box {
+            background-color: #f4eedf; 
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #e3d7bf;
+            margin: 15px 0 25px 0;
+        }
+        
+        .image {
+            float: left;
+            width: 28%; 
+            margin-right: 4%;
+        }
+        
+        .image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            border: 1px solid #c8bda3;
+        }
+        
+        .info {
+            float: left;
+            width: 68%; 
+        }
+        
+        .inside {
+            list-style-type: disc !important;
+            margin-left: 15px !important;
+            padding: 0;
+        }
+        
+        .inside li {
+            font-size: 13px !important;
+            margin-bottom: 12px !important;
+            font-weight: normal !important; 
+        }
+        
+        .inside li strong {
+            color: #702c2c;
+        }
+       
+        footer {
+            background-color: #232326;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 11px;
+            border-top: 1px solid #3a3835;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="c_12">
+        <div id="logo" class="c_3 c_m_3"><a href="index.html"><img src="logo.png"></a></div>
+        <h1 class="c_6 c_m_6"><a href="index.html">조선 역사 아카이브</a></h1>
+        <div id="my_info" class="c_3 c_m_3">202334650 | 컴퓨터공학과 | 김현태</div>
+        <div class="clear"></div> 
+        
+        <nav id="main_menu">
+            <ul>
+                <li><a href="king.html">왕조실록</a>
+                    <ul class="dropdown">
+                        <li><a href="king1.html">태조</a></li>
+                        <li><a href="king2.html">태종</a></li>
+                        <li><a href="king3.html">세종</a></li>
+                        <li><a href="king4.html">영조</a></li>
+                        <li><a href="king5.html">정조</a></li>
+                    </ul>
+                </li>
+                <li><a href="history.html">역사적 사건</a>
+                    <ul class="dropdown">
+                        <li><a href="history1.html">임진왜란·정유재란</a></li>
+                        <li><a href="history2.html">병자호란</a></li>
+                        <li><a href="history3.html">동학농민운동</a></li>
+                    </ul>
+                </li>
+                <li><a href="person.html">역사적 인물</a>
+                    <ul class="dropdown">
+                        <li><a href="person1.html">이순신</a></li>
+                        <li><a href="person2.html">장영실</a></li>
+                        <li><a href="person3.html">정약용</a></li>
+                    </ul>
+                </li>
+                <li><a href="thing.html">문화와 예술</a>
+                    <ul class="dropdown">
+                        <li><a href="thing1.html">훈민정음</a></li>
+                        <li><a href="thing2.html">용비어천가</a></li>
+                        <li><a href="thing3.html">조선왕조의궤</a></li>
+                    </ul>
+                </li>
+                <li><a href="science.html">과학과 기술</a>
+                    <ul class="dropdown">
+                        <li><a href="science1.html">대동여지도</a></li>
+                        <li><a href="science2.html">자격루와 앙부일구</a></li>
+                        <li><a href="science3.html">거북선</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="clear"></div>
+
+    <main>
+        <section class="c_3 c_m_4">
+            <div id="sidebar">
+                <p class="sub_menu_title">과학과 기술</p>
+                <ul class="sub_menu_list">
+                    <li><a href="science1.html">대동여지도</a></li>
+                    <li><a href="science2.html">자격루와 앙부일구</a></li>
+                    <li><a href="science3.html">거북선</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="c_9 c_m_8">
+            <div id="content_body">
+                <h2>거북선 (龜船)</h2>
+                <p>"판옥선의 상부를 개량하여 개판(덮개)을 씌운 조선 수군의 무적 돌격선"</p>
+                <div class="box">
+                    <div class="image">
+                        <img src="science3.jpg"> 
+                    </div>
+                    <div class="info">
+                        <ul class="inside">
+                            <li><strong>정의:</strong> 조선 수군의 주력 함선인 판옥선(板屋船)의 아랫부분 선체를 바탕으로, 윗부분에 덮개를 덮고 칼과 송곳을 꽂아 적이 배에 오르지 못하게 만든 장갑화된 특수 군선.</li>
+                            <li><strong>의의:</strong> 임진왜란 직전 전라좌수사 이순신에 의해 창의적으로 재건되어 사천해전(첫 출전), 한산도대첩 등에서 선두 돌격선으로 활약하며 남해의 제해권을 장악하는 데 결정적 기여를 함.</li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div> 
+                </div>
+                <p>1. 거북선의 역사적 변천</p>
+                <p>조선 초기 (태종 대)의 기록</p>
+                <ul>
+                    <li>최초 기록: 1413년(태종 13) 태종이 임진나루를 지나다 거북선과 왜선이 모의 전투를 벌이는 모습을 보았다는 기록이 최초로 등장함</li>
+                    <li>특징: 당시에도 많은 적과 충돌해도 끄떡없을 만큼 견고했으나, 조선 전기의 수군 체제가 대·중·소의 맹선(猛船) 체제(평시 조운선 겸용) 중심이었기에 주력 전선으로 적극 활용되지는 못함. 이후 임진왜란 전까지 약 180년간 기록이 단절됨.</li>
+                </ul>
+                <p>임진왜란기 (이순신의 재창제)</p>
+                <ul>
+                    <li>건조와 훈련: 왜란 발발 1년 전 전라좌수사에 부임한 이순신이 전란을 대비해 자의로 건조함. 『난중일기』에 따르면 1592년 2월 돛에 쓸 범포를 조달하고, 왜란 발발 직전인 4월 12일까지도 포격 훈련을 진행함.</li>
+                    <li>실전 투입: 1592년 5월 29일 사천해전에 최초로 돌격선으로 투입되어 돌진 후 총통으로 일본 군선을 불살라 대승을 거둠.</li>
+                </ul>
+                <p>조선 후기의 지속적 운용</p>
+                <ul>
+                    <li>임진왜란 이후에도 거북선은 주력선인 판옥선을 보조하는 핵심 전략 자산으로 인식되어 조선 후기까지 지속적으로 건조 및 개량되며 군사적으로 활용됨.</li>
+                </ul>
+                <p>2. 구조와 형태에 관한 학술적 논쟁 및 사료 비교</p>
+                거북선은 현재 남아있는 실물 유물이 없어 구조에 대한 다양한 해석과 사료 간 상충하는 부분이 존재합니다.
+                <ul>
+                    <p>층수(層數)에 대한 대립되는 견해</p>
+                    <li>외관상 2층설: 아래 선체는 판옥선과 같고, 윗부분만 거북 모양으로 덮었다는 견해.</li>
+                    <li>3층설(또는 2.5층설): 격군(노젓는 이)과 사수(전투원)의 공간을 완전히 분리하고 개판(덮개) 쪽에 포혈이 배치되어 있어 온전한 3층 혹은 3층에 가까운 구조였다는 견해. (※ 층수는 운행 방식 및 포격 전술과 직결됨).</li>
+                    <p>주요 사료별 묘사의 차이점</p>
+                    <li>『간재집(艮齋集)』 (이덕홍, 1592년): * 광해군에게 올린 글에서 귀갑선(龜甲船)의 형태를 상세히 묘사. 등 부분에 창검을 붙이고 머리에 쇠뇌를 숨기며, 허리에 판옥을 두어 사수가 들어가고 옆으로 사혈(활구멍), 아래로 총통과 대부(큰 도끼)를 두어 충돌·포격했다고 기록.
+                        <ul>
+                            <li>수록된 '귀갑선도'는 덮개가 곡선이 아닌 다각형(6각 또는 8각)으로 그려져 있어 구조 연구의 중요 근거가 됨.</li>
+                        </ul>
+                    </li>
+                    <li>『임진장초』 및 이분의 「행록」 (임진왜란 당시 가장 정확한 기록):
+                        <ul>
+                            <li>용머리[용두(龍頭)]에서 대포(화포)를 직접 발사했다고 기록함.</li>
+                            <li>이분의 기록에는 측면 포혈(포구멍)이 6개라고 명시됨.</li>
+                        </ul>
+                    </li>
+                    <li>『이충무공전서』 (정조 19년, 1795년):
+                        <ul>
+                            <li>통제영 및 전라좌수영 거북선 도설이 수록되어 있으나, 이는 이순신 당시가 아닌 정조 때 개량된 거북선의 모습임.</li>
+                            <li>여기서는 거북머리[귀두(龜頭)]에서 대포가 아닌 *연기(유황연)*를 피운다고 하였고, 그림상의 포혈 수도 임진왜란 당시 기록보다 훨씬 많이 그려져 있음.</li>
+                        </ul>
+                    </li>
+                    <li>이순신 종가 소장 유물 (조선 후기 그림):
+                        <ul>
+                            <li>개판(덮개) 위에 지휘소인 장대(將臺)가 설치되어 있어, 조선 후기로 갈수록 외부 관측과 전투 지휘를 위해 구조적 변화가 일어났음을 보여줌.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>3. 거북선의 전술적 우수성</p>
+                <ul>
+                    <li>철저한 승조원 방호력: 개판 위에 칼과 송곳을 촘촘히 꽂아, 일본 수군의 장기인 '배 위로 뛰어올라 백병전(육박전)을 벌이는 전술'을 원천 차단함.</li>
+                    <li>근접 포격전 수행: 선체가 강력하게 방호되어 적의 조총 사격 속에서도 격군과 사부들이 안전하게 적선 내부 깊숙이 돌진할 수 있었음. 이로 인해 화포의 명중률을 극대화하여 적함을 확실하게 격파하는 돌격선 역할을 완벽히 수행함.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <div class="clear"></div>
+
+    <footer>
+        <p>출처: 우리역사넷, 국가유산청 현충사 관리소</p>
+        <p>COPYRIGHT © 202334650 Kim Hyeon Tae All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

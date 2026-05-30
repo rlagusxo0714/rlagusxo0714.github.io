@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>훈민정음 페이지</title>
+    <style>
+       * { 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }  
+        body {
+            font-family: "맑은 고딕";
+            color: #2c2a29;               
+            background-image: url(hanji.jpg);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        [class*="c_"] {
+            float: left;
+            padding: 10px;
+        }
+        [class*="c_"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .c_m_1 {width: 8.33%;} .c_m_2 {width: 16.66%;} .c_m_3 {width: 25%;}
+            .c_m_4 {width: 33.33%;} .c_m_5 {width: 41.66%;} .c_m_6 {width: 50%;}
+            .c_m_7 {width: 58.33%;} .c_m_8 {width: 66.66%;} .c_m_9 {width: 75%;}
+            .c_m_10 {width: 83.33%;} .c_m_11 {width: 91.66%;} .c_m_12 {width: 100%;}
+        }
+        @media only screen and (max-width: 767px) {
+            #my_info { text-align: center; }
+            #sidebar { margin-bottom: 20px; } 
+        }
+
+        @media only screen and (min-width: 768px) {
+            .c_1 {width: 8.33%;} .c_2 {width: 16.66%;} .c_3 {width: 25%;}
+            .c_4 {width: 33.33%;} .c_5 {width: 41.66%;} .c_6 {width: 50%;}
+            .c_7 {width: 58.33%;} .c_8 {width: 66.66%;} .c_9 {width: 75%;}
+            .c_10 {width: 83.33%;} .c_11 {width: 91.66%;} .c_12 {width: 100%;}
+        }
+
+        .clear { clear: both; }
+
+        a:link, a:visited {
+            text-decoration: none;
+            color: white;
+        }
+        a:hover {
+            font-weight: bold;
+        }
+
+        header {
+            background-color: #232326; 
+            color: #ffffff;
+            padding: 20px 5% 0 5%;
+            border-bottom: 1px solid #702c2c;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        #my_info {
+            text-align: right;
+            color: #aaaaaa;
+        }
+
+        #main_menu {
+            text-align: center;
+            padding: 15px 0 0 0;
+        }
+        
+        #main_menu ul {
+            display: inline-block; 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #main_menu ul li {
+            display: inline-block;
+            position: relative; 
+            background: #3a3835; 
+            border: 1px solid #4a4845;
+            border-radius: 4px;
+            margin: 0 4px;
+            width: 150px;
+        }
+        #main_menu ul li a {
+            display: block;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        
+        #main_menu ul li:hover {
+            background: #702c2c; 
+        }
+
+        
+        #main_menu ul li:hover ul {
+            display: block;
+        }
+
+       
+        #main_menu ul li ul {
+            position: absolute;
+            top: 100%; 
+            left: -1px;
+            width: 150px; 
+            display: none;
+            z-index: 999;
+        }
+
+        
+        #main_menu ul li ul li {
+            background: #3a3835 !important; 
+            display: block;
+            width: 100%;
+            margin: 0;
+            border-top: none;
+        }
+
+        
+        #main_menu ul li ul li a {
+            display: block !important;
+            padding: 10px 0;
+            font-size: 11px;
+            color: #ffffff  ;
+            font-weight: normal;
+        }
+
+       
+        #main_menu ul li ul li:hover {
+            background: #702c2c !important; 
+        }
+        #main_menu ul li ul li:hover a {
+            color: white;
+        }
+        main { 
+            max-width: 1100px; 
+            width: 90%;
+            margin: 40px auto; 
+        }
+
+        
+        #sidebar {
+            background-color: #f4eedf; 
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #c8bda3;
+        }
+        .sub_menu_title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #702c2c; 
+            color: #2c2a29;
+        }
+        .sub_menu_list li {
+            margin-bottom: 8px;
+            list-style-type: none;
+        }
+        .sub_menu_list a {
+            display: block;
+            padding: 10px 12px;
+            background-color: #ffffff; 
+            border-radius: 5px;
+            border: 1px solid #c8bda3;
+            font-weight: bold;
+            color: #2c2a29;
+        }
+        .sub_menu_list a:hover {
+            background-color: #702c2c;
+            color: white; 
+        }
+
+        #content_body {
+            background-color: #fcfaf5;
+            border-radius: 8px;
+            min-height: 400px;
+            padding: 30px;
+            border: 1px solid #c8bda3;
+            
+        }
+        #content_body h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e3d7bf;
+            padding-bottom: 10px;
+            color: #1c1c1e;
+        }
+        #content_body p {
+            color: #2c2a29;
+            font-size: 13px;
+            line-height: 1.8;
+            padding: 5px 0;
+            font-weight: bold;
+        }
+
+        #content_body li {
+            margin-left: 25px;
+        }
+
+        .box {
+            background-color: #f4eedf; 
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #e3d7bf;
+            margin: 15px 0 25px 0;
+        }
+        
+        .image {
+            float: left;
+            width: 28%; 
+            margin-right: 4%;
+        }
+        
+        .image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            border: 1px solid #c8bda3;
+        }
+        
+        .info {
+            float: left;
+            width: 68%; 
+        }
+        
+        .inside {
+            list-style-type: disc !important;
+            margin-left: 15px !important;
+            padding: 0;
+        }
+        
+        .inside li {
+            font-size: 13px !important;
+            margin-bottom: 12px !important;
+            font-weight: normal !important; 
+        }
+        
+        .inside li strong {
+            color: #702c2c;
+        }
+       
+        footer {
+            background-color: #232326;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 11px;
+            border-top: 1px solid #3a3835;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="c_12">
+        <div id="logo" class="c_3 c_m_3"><a href="index.html"><img src="logo.png"></a></div>
+        <h1 class="c_6 c_m_6"><a href="index.html">조선 역사 아카이브</a></h1>
+        <div id="my_info" class="c_3 c_m_3">202334650 | 컴퓨터공학과 | 김현태</div>
+        <div class="clear"></div> 
+        
+        <nav id="main_menu">
+            <ul>
+                <li><a href="king.html#">왕조실록</a>
+                    <ul class="dropdown">
+                        <li><a href="king1.html">태조</a></li>
+                        <li><a href="king2.html">태종</a></li>
+                        <li><a href="king3.html">세종</a></li>
+                        <li><a href="king4.html">영조</a></li>
+                        <li><a href="king5.html">정조</a></li>
+                    </ul>
+                </li>
+                <li><a href="history.html">역사적 사건</a>
+                    <ul class="dropdown">
+                        <li><a href="history1.html">임진왜란·정유재란</a></li>
+                        <li><a href="history2.html">병자호란</a></li>
+                        <li><a href="history3.html">동학농민운동</a></li>
+                    </ul>
+                </li>
+                <li><a href="person.html">역사적 인물</a>
+                    <ul class="dropdown">
+                        <li><a href="person1.html">이순신</a></li>
+                        <li><a href="person2.html">장영실</a></li>
+                        <li><a href="person3.html">정약용</a></li>
+                    </ul>
+                </li>
+                <li><a href="thing.html">문화와 예술</a>
+                    <ul class="dropdown">
+                        <li><a href="thing1.html">훈민정음</a></li>
+                        <li><a href="thing2.html">용비어천가</a></li>
+                        <li><a href="thing3.html">조선왕조의궤</a></li>
+                    </ul>
+                </li>
+                <li><a href="science.html">과학과 기술</a>
+                    <ul class="dropdown">
+                        <li><a href="science1.html">대동여지도</a></li>
+                        <li><a href="science2.html">자격루와 앙부일구</a></li>
+                        <li><a href="science3.html">거북선</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="clear"></div>
+
+    <main>
+        <section class="c_3 c_m_4">
+            <div id="sidebar">
+                <p class="sub_menu_title">문화와 예술</p>
+                <ul class="sub_menu_list">
+                    <li><a href="thing1.html">훈민정음</a></li>
+                    <li><a href="thing2.html">용비어천가</a></li>
+                    <li><a href="thing3.html">조선왕조의궤</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="c_9 c_m_8">
+            <div id="content_body">
+                <h2>훈민정음 (訓民正音)</h2>
+                <p>"국어이호중국(國語異乎中國) 문자와불상유통(文字與不相流通) — 나랏말싸미 듕귁에 달아 문자와로 서르 사맛디 아니할쎄"</p>
+                <div class="box">
+                    <div class="image">
+                        <img src="thing1.jpg"> 
+                    </div>
+                    <div class="info">
+                        <ul class="inside">
+                            <li><strong>정의:</strong> 1443년(세종 25) 세종대왕이 창제한 우리말 표기 문자 시스템(한글)이자, 1446년(세종 28)에 이를 해설하여 발간한 한문 해설서(책)의 이름</li>
+                            <li><strong>뜻풀이:</strong> 백성을 가르치는 바른 소리 (訓: 가르칠 훈, 民: 백성 민, 正: 바를 정, 音: 소리 음).</li>
+                            <li><strong>문화적 가치:</strong> 국보 제70호, 유네스코(UNESCO) 세계기록유산(1997년 등재). 세계 문자사에서 '문자를 만든 목적과 과학적 제자 원리를 상세히 밝힌 유일한 해설서</li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div> 
+                </div>
+                <p>1. 창제 배경 및 최만리의 반대 상소 (말과 글의 일치)</p>
+                <ul>
+                    <p>겪어온 불편과 창제 동기</p>
+                    <li>언어의 이중 생활: 말(구어)은 우리말을 쓰면서 글(문어)은 한문을 쓰는 모순을 겪음. 삼국시대부터 이두, 구결, 향찰 등의 차용 표기법을 개발했으나 불완전함</li>
+                    <li>애민(愛民) 정신: 한자를 모르는 어리석은 백성들이 억울한 일을 당하거나 자신의 뜻을 표현하지 못하는 정황을 세종이 딱하게 여겨 '배우기 쉽고 날마다 쓰기 편한' 28자의 표음문자를 창제함.</li>
+                    <p>집현전 부제학 최만리의 반대 상소 (1444년)</p>
+                    지식인층의 사대주의와 성리학적 명분론에 근거한 반대 세력의 핵심 논거 6가지
+                    <li>사대주의 위배: 중국과 다른 독자적 문자를 만드는 것은 중화(中華)를 사모하는 예의에 어긋남</li>
+                    <li>이적(오랑캐)의 행위: 글자를 만들어 쓰는 곳은 몽골, 여진, 일본 등 오랑캐뿐임/li>
+                    <li>한자 및 성리학 경시: 배우기 쉬운 언문(한글)을 쓰면 관료들이 한자를 배우지 않아 성리학 연구가 퇴보할 것임.</li>
+                    <li>형벌 집행의 공정성 부정: 이두를 써도 백성이 원통한 것은 관리의 자질 문제이지 글자의 문제가 아님.</li>
+                    <li>밀실 행정: 조정의 수많은 신료와 상의하지 않고 단 10여 명의 관리에게만 맡겨 급하게 제정함.</li>
+                    <li>동방학문의 방해: 국가 정사를 제쳐두고 문자를 만드는 것은 왕의 학문 정진에 방해가 됨.</li>
+                    <li>결과: 세종의 확고한 의지로 최만리 등은 낙향하게 되었으며, 창제 사업은 흔들림 없이 추진됨.</li>
+                </ul>
+                <p>2. 『훈민정음』 해례본(解例本)의 내부 구조</p>
+                1443년 글자 완성 후, 3년간 세종과 집현전 8인 학사(정인지, 신숙주, 성삼문, 최항, 박팽년, 강희안, 이개, 이선로)가 보완하여 1446년 9월 발간한 한문 원본의 구조입니다.
+                <ul>
+                    <p>예의 (例義) — 세종대왕 집필</p>
+                    <li>어제서문(御製序文): 창제 취지와 애민 정신을 밝힌 머리말.</li>
+                    <li>내용: 28글자의 모양, 소릿값(음가), 글자를 나란히 쓰는 법(병서), 이어 쓰는 법(연서), 붙여 쓰는 법(부서), 받침 규정(종성), 성조(사성) 등 한글 사용의 기본 골격을 규정함.</li>
+                    <p>해례 (解例) — 집현전 학사 8인 집필</p>
+                    <li>제자해(制字解): 가장 핵심적인 부분. 자음은 발음 기관의 모양(설, 순, 치, 후 등)을 본뜨고 가획(획을 더함)했으며, 모음은 천지인(天地人, ㆍ, ㅡ, ㅣ) 삼재의 모양과 철학적 원리를 바탕으로 만들었음을 규명.</li>
+                    <li>초성해(初聲解): 23개 초성 체계와 자모의 음가 설명.</li>
+                    <li>중성해(중聲解) & 종성해(終聲解): 모음과 받침의 개념 및 원리 기술</li>
+                    <li>합자해(合字解): 초·중·종성이 결합하여 하나의 음절 단위(글자)로 표기되는 방식 설명.</li>
+                    <li>용자례(用字例): 실제 단어 표기의 구체적인 예시 제시</li>
+                    <p>정인지 서문 (序文)</p>
+                    <li>바람소리, 학 울음소리까지 다 적을 수 있는 한글의 무한한 확장성과 우수성을 극찬함. "지혜로운 자는 하루, 어리석은 자도 열흘이면 배운다"는 구절이 포함됨. 발간 참여자 명단 및 연월일(1446년 9월 상한)을 기록함.</li>
+                </ul>
+                <p>3. 『훈민정음』 3대 판본 및 초기 보급 문헌</p>
+                <ul>
+                    <p>해례본 (解例本)</p>
+                    <li>표기문자: 한문 (漢文)</li>
+                    <li>주요 특징 및 내용: 1446년 발행된 원본. '해례' 부분이 유일하게 포함되어 있어 제자 원리를 알 수 있는 가장 귀중한 판본. (간송미술관 소장)</li>
+                    <p>언해본 (諺解本)</p>
+                    <li>표기문자: 한글+한문 혼용</li>
+                    <li>주요 특징 및 내용: 해례본의 첫 부분인 「예의」를 우리말로 번역한 것. 『월인석보』 권1 머리말에 실려 유통됨. (서강대 소장)</li>
+                    <p>실록본 (實錄本)</p>
+                    <li>표기문자: 한문 (漢文)</li>
+                    <li>주요 특징 및 내용: 『세종실록』 1446년 9월 기사에 수록된 버전. 「예의」의 요약본과 정인지 서문만 수록되어 있으며, 해례 부분은 빠져 있음.</li>
+                    <p>초기 정음(한글) 문헌의 보급 특성 (창제 후 약 50년간)</p>
+                    문자 보급 및 교육 여건이 열악했던 초기에 국가 주도로 한글을 확산시키기 위해 취해진 전략적 특징입니다.
+                    <li>국가 및 왕실 주도의 관판본: 간경도감 등 국가 기관이 중심이 되어 국가적 문화 역량을 집결하여 간행함.</li>
+                    <li>불경(佛經) 번역의 압도적 비율: 백성들에게 가장 친숙하고 파급력이 큰 종교 서적을 먼저 언해함.</li>
+                    <li>주요 문헌: 『용비어천가』(1447), 『월인천강지곡』(1447), 『석보상절』(1447), 『월인석보』(1459), 『능엄경언해』(1461) 등 현재 40여 종 확인됨.</li>
+                    <p>한글날(10월 9일)의 유래</p>
+                    <li>세종실록』에는 정확한 반포일이 명시되어 있지 않으나, 1940년 발견된 『해례본』 정인지 서문에 "세종 28년 9월 상한(上澣, 음력 9월 1~10일)"이라는 기록이 발견되었습니다. 이에 따라 음력 9월 상한의 마지막 날인 9월 10일을 양력으로 환산하여 현재의 10월 9일이 한글날로 정립되었습니다</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <div class="clear"></div>
+
+    <footer>
+        <p>출처: 우리역사넷, 한국민족문화대백과사전</p>
+        <p>COPYRIGHT © 202334650 Kim Hyeon Tae All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

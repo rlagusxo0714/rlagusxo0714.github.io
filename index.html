@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 페이지</title>
+    <style>
+        * { 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }  
+        body {
+            font-family: "맑은 고딕";
+            color: #2c2a29;               
+            background-image: url(hanji.jpg);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        [class*="c_"] {
+            float: left;
+            padding: 10px;
+        }
+        [class*="c_"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .c_m_1 {width: 8.33%;} .c_m_2 {width: 16.66%;} .c_m_3 {width: 25%;}
+            .c_m_4 {width: 33.33%;} .c_m_5 {width: 41.66%;} .c_m_6 {width: 50%;}
+            .c_m_7 {width: 58.33%;} .c_m_8 {width: 66.66%;} .c_m_9 {width: 75%;}
+            .c_m_10 {width: 83.33%;} .c_m_11 {width: 91.66%;} .c_m_12 {width: 100%;}
+        }
+
+        @media only screen and (max-width: 767px) {
+            #my_info { text-align: center; }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .c_1 {width: 8.33%;} .c_2 {width: 16.66%;} .c_3 {width: 25%;}
+            .c_4 {width: 33.33%;} .c_5 {width: 41.66%;} .c_6 {width: 50%;}
+            .c_7 {width: 58.33%;} .c_8 {width: 66.66%;} .c_9 {width: 75%;}
+            .c_10 {width: 83.33%;} .c_11 {width: 91.66%;} .c_12 {width: 100%;}
+        }
+
+        .clear { clear: both; }
+
+        a:link, a:visited {
+            text-decoration: none;
+            color: white;
+        }
+        a:hover {
+            font-weight: bold;
+        }
+
+        header {
+            background-color: #232326; 
+            color: #ffffff;
+            padding: 20px 5% 0 5%;
+            border-bottom: 1px solid #702c2c;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        #my_info {
+            text-align: right;
+            color: #aaaaaa;
+        }
+
+        #main_menu {
+            text-align: center;
+            padding: 15px 0 0 0;
+        }
+        
+        #main_menu ul {
+            display: inline-block; 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #main_menu ul li {
+            display: inline-block;
+            position: relative; 
+            background: #3a3835; 
+            border: 1px solid #4a4845;
+            border-radius: 4px;
+            margin: 0 4px;
+            width: 150px;
+        }
+        #main_menu ul li a {
+            display: block;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        
+        #main_menu ul li:hover {
+            background: #702c2c; 
+        }
+
+        
+        #main_menu ul li:hover ul {
+            display: block;
+        }
+
+       
+        #main_menu ul li ul {
+            position: absolute;
+            top: 100%; 
+            left: -1px;
+            width: 150px; 
+            display: none;
+            z-index: 999;
+        }
+
+        
+        #main_menu ul li ul li {
+            background: #3a3835 !important; 
+            display: block;
+            width: 100%;
+            margin: 0;
+            border-top: none;
+        }
+
+        
+        #main_menu ul li ul li a {
+            display: block !important;
+            padding: 10px 0;
+            font-size: 11px;
+            color: #ffffff  ;
+            font-weight: normal;
+        }
+
+       
+        #main_menu ul li ul li:hover {
+            background: #702c2c !important; 
+        }
+        #main_menu ul li ul li:hover a {
+            color: white;
+        }
+
+       
+        main { 
+            max-width: 1100px; 
+            width: 90%;
+            margin: 40px auto; 
+        }
+
+        
+        #banner {
+            position: relative; 
+            width: 100%; 
+            height: 350px; 
+            overflow: hidden; 
+            border-radius: 10px;
+            border: 1px solid #c8bda3;
+            margin-bottom: 30px;
+        }
+        .slide {
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            background-size: contain; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(hanji.jpg);
+            animation: slide 12s infinite; 
+            opacity: 0;
+        }
+        .inbanner {
+            position:absolute; 
+            bottom:30px; 
+            left:40px; 
+            color:white; 
+            z-index:10;
+        }
+        .inbanner h2 {
+            font-size: 2rem; 
+            text-shadow: 2px 2px 4px #444444;
+            font-weight: normal;
+        }
+        .slide:nth-child(1) { 
+            background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),  url('slide1.jpg'); 
+            animation-delay: 0s; 
+        }
+        .slide:nth-child(2) { 
+            background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url('slide2.jpg'); 
+            animation-delay: 4s; 
+        }
+        .slide:nth-child(3) { 
+            background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url('slide3.jpg'); 
+            animation-delay: 8s; 
+        }
+        @keyframes slide { 
+            0% { opacity: 0; }
+            5% { opacity: 1; }     
+            28% { opacity: 1; }    
+            33% { opacity: 0; }   
+            100% { opacity: 0; }
+        }
+
+        
+        #keyword {
+            background-color: #f4eedf; 
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #c8bda3;
+        }
+        #keyword h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #2c2a29;
+            border-bottom: 2px solid #702c2c;
+            padding-bottom: 6px;
+            display: inline-block;
+        }
+        #keyword_list {
+            list-style: none;
+            overflow: hidden; 
+            margin-bottom: 25px;
+        }
+        #keyword_list li {
+            float: left;
+            width: 23%;
+            margin-right: 2.66%;
+            text-align: center;
+        }
+        #keyword_list li:last-child {
+            margin-right: 0;
+        }
+        #keyword_list li a {
+            display: block;
+            padding: 10px 0;
+            background-color: #ffffff; 
+            color: #2c2a29;
+            border: 1px solid #c8bda3;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        #keyword_list li a:hover {
+            background-color: #702c2c;
+            color: #ffffff;
+            border-color: #702c2c;
+        }
+
+        #text {
+            background-color: #c8bda3;
+            border-left: 4px solid #702c2c; 
+            padding: 15px 20px;
+            color: #2c2a29;
+            font-style: italic;
+            border-radius: 0 6px 6px 0;
+        }
+
+        #text a {
+            color: #2c2a29;
+        }
+
+        footer {
+            background-color: #232326;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 11px;
+            border-top: 1px solid #3a3835;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="c_12">
+        <div id="logo" class="c_3 c_m_3"><a href="index.html"><img src="logo.png"></a></div>
+        <h1 class="c_6 c_m_6"><a href="index.html">조선 역사 아카이브</a></h1>
+        <div id="my_info" class="c_3 c_m_3">202334650 | 컴퓨터공학과 | 김현태</div>
+        <div class="clear"></div>
+
+        <nav id="main_menu">
+            <ul>
+                <li><a href="king.html">왕조실록</a>
+                    <ul class="dropdown">
+                        <li><a href="king1.html">태조</a></li>
+                        <li><a href="king2.html">태종</a></li>
+                        <li><a href="king3.html">세종</a></li>
+                        <li><a href="king4.html">영조</a></li>
+                        <li><a href="king5.html">정조</a></li>
+                    </ul>
+                </li>
+                <li><a href="history.html">역사적 사건</a>
+                    <ul class="dropdown">
+                        <li><a href="history1.html">임진왜란·정유재란</a></li>
+                        <li><a href="history2.html">병자호란</a></li>
+                        <li><a href="history3.html">동학농민운동</a></li>
+                    </ul>
+                </li>
+                <li><a href="person.html">역사적 인물</a>
+                    <ul class="dropdown">
+                        <li><a href="person1.html">이순신</a></li>
+                        <li><a href="person2.html">장영실</a></li>
+                        <li><a href="person3.html">정약용</a></li>
+                    </ul>
+                </li>
+                <li><a href="thing.html">문화와 예술</a>
+                    <ul class="dropdown">
+                        <li><a href="thing1.html">훈민정음</a></li>
+                        <li><a href="thing2.html">용비어천가</a></li>
+                        <li><a href="thing3.html">조선왕조의궤</a></li>
+                    </ul>
+                </li>
+                <li><a href="science.html">과학과 기술</a>
+                    <ul class="dropdown">
+                        <li><a href="science1.html">대동여지도</a></li>
+                        <li><a href="science2.html">자격루와 앙부일구</a></li>
+                        <li><a href="science3.html">거북선</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="clear"></div>
+
+    <main>
+        <div id="banner">
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="inbanner">
+                <h2>
+                    기록으로 보는 조선의 역사
+                </h2>
+            </div>
+        </div>
+
+        <section id="keyword">
+            <h3>이달의 키워드</h3>
+            <ul id="keyword_list">
+                <li><a href="person2.html"># 장영실</a></li>
+                <li><a href="king5.html"># 수원화성</a></li>
+                <li><a href="person1.html"># 임진왜란</a></li>
+                <li><a href="king4.html"># 탕평책</a></li>
+            </ul>
+            <div id="text">
+                <a href="king3.html">"백성은 나라의 근본이요, 근본이 튼튼해야 나라가 평안하다." - 세종대왕 훈민정음 서문 및 세종실록 중</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="clear"></div>
+
+    <footer>
+        <p>출처: 국가유산포털, 국립고궁박물관</p>
+        <p>COPYRIGHT © 202334650 Kim Hyeon Tae All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

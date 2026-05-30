@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>왕조실록 페이지</title>
+    <style>
+       * { 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }  
+        body {
+            font-family: "맑은 고딕";
+            color: #2c2a29;               
+            background-image: url(hanji.jpg);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        [class*="c_"] {
+            float: left;
+            padding: 10px;
+        }
+        [class*="c_"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .c_m_1 {width: 8.33%;} .c_m_2 {width: 16.66%;} .c_m_3 {width: 25%;}
+            .c_m_4 {width: 33.33%;} .c_m_5 {width: 41.66%;} .c_m_6 {width: 50%;}
+            .c_m_7 {width: 58.33%;} .c_m_8 {width: 66.66%;} .c_m_9 {width: 75%;}
+            .c_m_10 {width: 83.33%;} .c_m_11 {width: 91.66%;} .c_m_12 {width: 100%;}
+        }
+        @media only screen and (max-width: 767px) {
+            #my_info { text-align: center; }
+            #sidebar { margin-bottom: 20px; } 
+        }
+
+        @media only screen and (min-width: 768px) {
+            .c_1 {width: 8.33%;} .c_2 {width: 16.66%;} .c_3 {width: 25%;}
+            .c_4 {width: 33.33%;} .c_5 {width: 41.66%;} .c_6 {width: 50%;}
+            .c_7 {width: 58.33%;} .c_8 {width: 66.66%;} .c_9 {width: 75%;}
+            .c_10 {width: 83.33%;} .c_11 {width: 91.66%;} .c_12 {width: 100%;}
+        }
+
+        .clear { clear: both; }
+
+        a:link, a:visited {
+            text-decoration: none;
+            color: white;
+        }
+        a:hover {
+            font-weight: bold;
+        }
+
+        header {
+            background-color: #232326; 
+            color: #ffffff;
+            padding: 20px 5% 0 5%;
+            border-bottom: 1px solid #702c2c;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        #my_info {
+            text-align: right;
+            color: #aaaaaa;
+        }
+
+        #main_menu {
+            text-align: center;
+            padding: 15px 0 0 0;
+        }
+        
+        #main_menu ul {
+            display: inline-block; 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #main_menu ul li {
+            display: inline-block;
+            position: relative; 
+            background: #3a3835; 
+            border: 1px solid #4a4845;
+            border-radius: 4px;
+            margin: 0 4px;
+            width: 150px;
+        }
+        #main_menu ul li a {
+            display: block;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        
+        #main_menu ul li:hover {
+            background: #702c2c; 
+        }
+
+        
+        #main_menu ul li:hover ul {
+            display: block;
+        }
+
+       
+        #main_menu ul li ul {
+            position: absolute;
+            top: 100%; 
+            left: -1px;
+            width: 150px; 
+            display: none;
+            z-index: 999;
+        }
+
+        
+        #main_menu ul li ul li {
+            background: #3a3835 !important; 
+            display: block;
+            width: 100%;
+            margin: 0;
+            border-top: none;
+        }
+
+        
+        #main_menu ul li ul li a {
+            display: block !important;
+            padding: 10px 0;
+            font-size: 11px;
+            color: #ffffff  ;
+            font-weight: normal;
+        }
+
+       
+        #main_menu ul li ul li:hover {
+            background: #702c2c !important; 
+        }
+        #main_menu ul li ul li:hover a {
+            color: white;
+        }
+        main { 
+            max-width: 1100px; 
+            width: 90%;
+            margin: 40px auto; 
+        }
+
+        
+        #sidebar {
+            background-color: #f4eedf; 
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #c8bda3;
+        }
+        .sub_menu_title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #702c2c; 
+            color: #2c2a29;
+        }
+        .sub_menu_list li {
+            margin-bottom: 8px;
+            list-style-type: none;
+        }
+        .sub_menu_list a {
+            display: block;
+            padding: 10px 12px;
+            background-color: #ffffff; 
+            border-radius: 5px;
+            border: 1px solid #c8bda3;
+            font-weight: bold;
+            color: #2c2a29;
+        }
+        .sub_menu_list a:hover {
+            background-color: #702c2c;
+            color: white; 
+        }
+
+        #content_body {
+            background-color: #fcfaf5;
+            border-radius: 8px;
+            min-height: 400px;
+            padding: 30px;
+            border: 1px solid #c8bda3;
+            
+        }
+        #content_body h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e3d7bf;
+            padding-bottom: 10px;
+            color: #1c1c1e;
+        }
+        #content_body p {
+            font-weight: bold; 
+            color: #555555; 
+            margin-bottom: 20px;
+        }
+
+        .box {
+            margin-top: 20px;
+        }
+
+        .menu {
+            float: left;
+            width: 30%;                
+            margin-right: 3.5%;       
+            background-color: #f4eedf; 
+            border: 1px solid #c8bda3;
+            border-radius: 6px;
+            padding: 15px;
+            min-height: 140px;   
+            margin-bottom: 10px;    
+        }
+
+        .menu.last {
+            margin-right: 0;
+        }
+
+        .menu h3 {
+            font-size: 15px;
+            color: #702c2c;           
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #c8bda3;
+            padding-bottom: 5px;
+        }
+
+        .menu p {
+            font-size: 12px !important;
+            font-weight: normal !important;
+            color: #2c2a29;
+            line-height: 1.5;
+        }
+
+        .menu_link {
+            display: block;
+            color: inherit !important; 
+        }
+        .menu_link:hover .menu {
+            background-color: #e3d7bf; 
+        }
+
+        footer {
+            background-color: #232326;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 11px;
+            border-top: 1px solid #3a3835;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="c_12">
+        <div id="logo" class="c_3 c_m_3"><a href="index.html"><img src="logo.png"></a></div>
+        <h1 class="c_6 c_m_6"><a href="index.html">조선 역사 아카이브</a></h1>
+        <div id="my_info" class="c_3 c_m_3">202334650 | 컴퓨터공학과 | 김현태</div>
+        <div class="clear"></div> 
+        
+        <nav id="main_menu">
+            <ul>
+                <li><a href="king.html">왕조실록</a>
+                    <ul class="dropdown">
+                        <li><a href="king1.html">태조</a></li>
+                        <li><a href="king2.html">태종</a></li>
+                        <li><a href="king3.html">세종</a></li>
+                        <li><a href="king4.html">영조</a></li>
+                        <li><a href="king5.html">정조</a></li>
+                    </ul>
+                </li>
+                <li><a href="history.html">역사적 사건</a>
+                    <ul class="dropdown">
+                        <li><a href="history1.html">임진왜란·정유재란</a></li>
+                        <li><a href="history2.html">병자호란</a></li>
+                        <li><a href="history3.html">동학농민운동</a></li>
+                    </ul>
+                </li>
+                <li><a href="person.html">역사적 인물</a>
+                    <ul class="dropdown">
+                        <li><a href="person1.html">이순신</a></li>
+                        <li><a href="person2.html">장영실</a></li>
+                        <li><a href="person3.html">정약용</a></li>
+                    </ul>
+                </li>
+                <li><a href="thing.html">문화와 예술</a>
+                    <ul class="dropdown">
+                        <li><a href="thing1.html">훈민정음</a></li>
+                        <li><a href="thing2.html">용비어천가</a></li>
+                        <li><a href="thing3.html">조선왕조의궤</a></li>
+                    </ul>
+                </li>
+                <li><a href="science.html">과학과 기술</a>
+                    <ul class="dropdown">
+                        <li><a href="science1.html">대동여지도</a></li>
+                        <li><a href="science2.html">자격루와 앙부일구</a></li>
+                        <li><a href="science3.html">거북선</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="clear"></div>
+
+    <main>
+        <section class="c_3 c_m_4">
+            <div id="sidebar">
+                <p class="sub_menu_title">왕조실록</p>
+                <ul class="sub_menu_list">
+                    <li><a href="king1.html">태조</a></li>
+                    <li><a href="king2.html">태종</a></li>
+                    <li><a href="king3.html">세종</a></li>
+                    <li><a href="king3.html">영조</a></li>
+                    <li><a href="king3.html">정조</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="c_9 c_m_8">
+            <div id="content_body">
+                <h2>왕조실록</h2>
+                <p>조선 왕조 500년의 역사를 기록한 실록 속 주요 국왕들의 생애와 핵심 업적을 소개합니다.</p>
+                
+                <div class="box">
+                    
+                    <a href="king1.html" class="menu_link">
+                        <div class="menu">
+                            <h3>태조 이성계</h3>
+                            <p>고려를 마감하고 새로운 왕조 조선을 개국한 태조 이성계의 이야기와, 한양 천도를 통해 새로운 국가의 기틀을 다진 과정을 확인합니다.</p>
+                        </div>
+                    </a>
+
+                    <a href="king2.html" class="menu_link">
+                        <div class="menu">
+                            <h3>태종 이방원</h3>
+                            <p>왕권을 강화하고 사병을 혁파하는 등 조선 초기 국가 시스템의 기틀을 다졌으며, 6조 직계제를 통해 강력한 중앙 집권화를 이룩한 국왕입니다.</p>
+                        </div>
+                    </a>
+
+                    <a href="king3.html" class="menu_link">
+                        <div class="menu last">
+                            <h3>세종대왕</h3>
+                            <p>훈민정음 창제를 비롯하여 과학, 문화, 국방 등 모든 분야에서 찬란한 황금기를 이룩한 조선 역사상 가장 위대한 성군입니다.</p>
+                        </div>
+                    </a>
+
+                    <a href="king4.html" class="menu_link">
+                        <div class="menu">
+                            <h3>영조</h3>
+                            <p>탕평책을 통해 붕당 정치의 폐해를 막고 민생을 안정시켰으며, 조선 후기 중흥기의 발판을 마련한 52년 재위의 국왕입니다.</p>
+                        </div>
+                    </a>
+
+                    <a href="king5.html" class="menu_link">
+                        <div class="menu last">
+                            <h3>정조</h3>
+                            <p>규장각을 설립하여 인재를 육성하고 수원화성을 축조하는 등, 학문과 정치를 개혁하여 조선의 르네상스를 이끈 개혁 군주입니다.</p>
+                        </div>
+                    </a>
+
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div class="clear"></div>
+
+    <footer>
+        <p>출처: 우리역사넷</p>
+        <p>COPYRIGHT © 202334650 Kim Hyeon Tae All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

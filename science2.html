@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자격루·앙부일구 페이지</title>
+    <style>
+       * { 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }  
+        body {
+            font-family: "맑은 고딕";
+            color: #2c2a29;               
+            background-image: url(hanji.jpg);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        [class*="c_"] {
+            float: left;
+            padding: 10px;
+        }
+        [class*="c_"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .c_m_1 {width: 8.33%;} .c_m_2 {width: 16.66%;} .c_m_3 {width: 25%;}
+            .c_m_4 {width: 33.33%;} .c_m_5 {width: 41.66%;} .c_m_6 {width: 50%;}
+            .c_m_7 {width: 58.33%;} .c_m_8 {width: 66.66%;} .c_m_9 {width: 75%;}
+            .c_m_10 {width: 83.33%;} .c_m_11 {width: 91.66%;} .c_m_12 {width: 100%;}
+        }
+        @media only screen and (max-width: 767px) {
+            #my_info { text-align: center; }
+            #sidebar { margin-bottom: 20px; } 
+        }
+
+        @media only screen and (min-width: 768px) {
+            .c_1 {width: 8.33%;} .c_2 {width: 16.66%;} .c_3 {width: 25%;}
+            .c_4 {width: 33.33%;} .c_5 {width: 41.66%;} .c_6 {width: 50%;}
+            .c_7 {width: 58.33%;} .c_8 {width: 66.66%;} .c_9 {width: 75%;}
+            .c_10 {width: 83.33%;} .c_11 {width: 91.66%;} .c_12 {width: 100%;}
+        }
+
+        .clear { clear: both; }
+
+        a:link, a:visited {
+            text-decoration: none;
+            color: white;
+        }
+        a:hover {
+            font-weight: bold;
+        }
+
+        header {
+            background-color: #232326; 
+            color: #ffffff;
+            padding: 20px 5% 0 5%;
+            border-bottom: 1px solid #702c2c;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        #my_info {
+            text-align: right;
+            color: #aaaaaa;
+        }
+
+        #main_menu {
+            text-align: center;
+            padding: 15px 0 0 0;
+        }
+        
+        #main_menu ul {
+            display: inline-block; 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #main_menu ul li {
+            display: inline-block;
+            position: relative; 
+            background: #3a3835; 
+            border: 1px solid #4a4845;
+            border-radius: 4px;
+            margin: 0 4px;
+            width: 150px;
+        }
+        #main_menu ul li a {
+            display: block;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        
+        #main_menu ul li:hover {
+            background: #702c2c; 
+        }
+
+        
+        #main_menu ul li:hover ul {
+            display: block;
+        }
+
+       
+        #main_menu ul li ul {
+            position: absolute;
+            top: 100%; 
+            left: -1px;
+            width: 150px; 
+            display: none;
+            z-index: 999;
+        }
+
+        
+        #main_menu ul li ul li {
+            background: #3a3835 !important; 
+            display: block;
+            width: 100%;
+            margin: 0;
+            border-top: none;
+        }
+
+        
+        #main_menu ul li ul li a {
+            display: block !important;
+            padding: 10px 0;
+            font-size: 11px;
+            color: #ffffff  ;
+            font-weight: normal;
+        }
+
+       
+        #main_menu ul li ul li:hover {
+            background: #702c2c !important; 
+        }
+        #main_menu ul li ul li:hover a {
+            color: white;
+        }
+        main { 
+            max-width: 1100px; 
+            width: 90%;
+            margin: 40px auto; 
+        }
+
+        
+        #sidebar {
+            background-color: #f4eedf; 
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #c8bda3;
+        }
+        .sub_menu_title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #702c2c; 
+            color: #2c2a29;
+        }
+        .sub_menu_list li {
+            margin-bottom: 8px;
+            list-style-type: none;
+        }
+        .sub_menu_list a {
+            display: block;
+            padding: 10px 12px;
+            background-color: #ffffff; 
+            border-radius: 5px;
+            border: 1px solid #c8bda3;
+            font-weight: bold;
+            color: #2c2a29;
+        }
+        .sub_menu_list a:hover {
+            background-color: #702c2c;
+            color: white; 
+        }
+
+        #content_body {
+            background-color: #fcfaf5;
+            border-radius: 8px;
+            min-height: 400px;
+            padding: 30px;
+            border: 1px solid #c8bda3;
+            
+        }
+        #content_body h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e3d7bf;
+            padding-bottom: 10px;
+            color: #1c1c1e;
+        }
+        #content_body p {
+            color: #2c2a29;
+            font-size: 13px;
+            line-height: 1.8;
+            padding: 5px 0;
+            font-weight: bold;
+        }
+
+        #content_body li {
+            margin-left: 25px;
+        }
+
+        .box {
+            background-color: #f4eedf; 
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #e3d7bf;
+            margin: 15px 0 25px 0;
+        }
+        
+        .image {
+            float: left;
+            width: 28%; 
+            margin-right: 4%;
+        }
+        
+        .image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            border: 1px solid #c8bda3;
+        }
+        
+        .info {
+            float: left;
+            width: 68%; 
+        }
+        
+        .inside {
+            list-style-type: disc !important;
+            margin-left: 15px !important;
+            padding: 0;
+        }
+        
+        .inside li {
+            font-size: 13px !important;
+            margin-bottom: 12px !important;
+            font-weight: normal !important; 
+        }
+        
+        .inside li strong {
+            color: #702c2c;
+        }
+       
+        footer {
+            background-color: #232326;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 11px;
+            border-top: 1px solid #3a3835;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="c_12">
+        <div id="logo" class="c_3 c_m_3"><a href="index.html"><img src="logo.png"></a></div>
+        <h1 class="c_6 c_m_6"><a href="index.html">조선 역사 아카이브</a></h1>
+        <div id="my_info" class="c_3 c_m_3">202334650 | 컴퓨터공학과 | 김현태</div>
+        <div class="clear"></div> 
+        
+        <nav id="main_menu">
+            <ul>
+                <li><a href="king.html">왕조실록</a>
+                    <ul class="dropdown">
+                        <li><a href="king1.html">태조</a></li>
+                        <li><a href="king2.html">태종</a></li>
+                        <li><a href="king3.html">세종</a></li>
+                        <li><a href="king4.html">영조</a></li>
+                        <li><a href="king5.html">정조</a></li>
+                    </ul>
+                </li>
+                <li><a href="history.html">역사적 사건</a>
+                    <ul class="dropdown">
+                        <li><a href="history1.html">임진왜란·정유재란</a></li>
+                        <li><a href="history2.html">병자호란</a></li>
+                        <li><a href="history3.html">동학농민운동</a></li>
+                    </ul>
+                </li>
+                <li><a href="person.html">역사적 인물</a>
+                    <ul class="dropdown">
+                        <li><a href="person1.html">이순신</a></li>
+                        <li><a href="person2.html">장영실</a></li>
+                        <li><a href="person3.html">정약용</a></li>
+                    </ul>
+                </li>
+                <li><a href="thing.html">문화와 예술</a>
+                    <ul class="dropdown">
+                        <li><a href="thing1.html">훈민정음</a></li>
+                        <li><a href="thing2.html">용비어천가</a></li>
+                        <li><a href="thing3.html">조선왕조의궤</a></li>
+                    </ul>
+                </li>
+                <li><a href="science.html">과학과 기술</a>
+                    <ul class="dropdown">
+                        <li><a href="science1.html">대동여지도</a></li>
+                        <li><a href="science2.html">자격루와 앙부일구</a></li>
+                        <li><a href="science3.html">거북선</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="clear"></div>
+
+    <main>
+        <section class="c_3 c_m_4">
+            <div id="sidebar">
+                <p class="sub_menu_title">과학과 기술</p>
+                <ul class="sub_menu_list">
+                    <li><a href="science1.html">대동여지도</a></li>
+                    <li><a href="science2.html">자격루와 앙부일구</a></li>
+                    <li><a href="science3.html">거북선</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="c_9 c_m_8">
+            <div id="content_body">
+                <h2>자격루 (自擊漏)</h2>
+                <p>"스스로 쳐서[自擊] 시각을 알려주는 국가 표준 자동 물시계"</p>
+                <div class="box">
+                    <div class="image">
+                        <img src="science2_1.jpg"> 
+                    </div>
+                    <div class="info">
+                        <ul class="inside">
+                            <li><strong>의의:</strong> 1434년(세종 16) 7월 1일부터 공식 사용된 조선 최초의 국가 표준 자동 시보 시계.</li>
+                            <li><strong>정치·사회적 가치:</strong> 유교적 통치 이념인 '관상수시(觀象授時, 백성에게 정확한 시간을 주어 농경을 돕고 삶을 개선함)'의 실천. 시각 측정 오류로 관리들이 중벌을 받던 폐단을 기술 혁신으로 해결함.</li>
+                            <li><strong>주요 기록 사료:</strong> 집현전 학사 김돈의 「보루각기(報漏閣記)」(제작 동기, 원리, 장영실의 기록 등) 및 김빈의 「보루각명(報漏閣銘)」.</li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div> 
+                </div>
+                <p>1. 자격루의 핵심 작동 원리</p>
+                자격루는 아날로그식 물시계의 정밀한 유압 측정 기술과 디지털식 자동 시보 장치를 결합한 하이테크 기구입니다.
+                <p>파수호 (물 공급) ➔ 수수호 (물 차오름) ➔ 부전(잣대) 상승 ➔ 방목(지렛대) 작동 ➔ 쇠구슬 낙하 ➔ 동판 전동 장치 가동 <br> ➔ 나무 인형의 시보 타격</p>
+                <p>인형별 시보 역할:</p>
+                <ul>
+                    <li>종: 시간(時) 안내</li>
+                    <li>북: 경(更, 밤 시간) 안내</li>
+                    <li>징: 점(點, 밤 시간의 세부 단위) 안내</li>
+                </ul>
+                <ul>
+                    <li>정밀 유압과 부력 측정: 크고 작은 파수호(물통)에서 일정한 압력으로 물이 흘러내려 원통형 수수호(물받이 항아리)로 들어갑니다. 수수호 안의 물이 고이면 하루를 12시 100각으로 등분한 '부전(부표와 잣대)'이 수면을 따라 점차 상승합니다.</li>
+                    <li>구슬 제어와 지렛대 시스템: 잣대가 올라가 일정 눈금에 도달하면 방목(지렛대 장치)을 건드리고, 그 끝에 있던 쇠구슬이 구멍 속으로 굴러 떨어집니다.</li>
+                    <li>자동 시보와 시각 전시: 떨어진 쇠구슬이 동판을 쳐서 동력을 전달하면, 3개의 나무 인형이 종(12시각), 북(밤의 '경'), 징(밤의 '점')을 자동으로 타격합니다. 타격과 동시에 해당 시각의 십이지신 인형이 나타나 2시간 동안 자리를 지키며 상시 시각을 전시했습니다.</li>
+                </ul>
+                <p>당시의 밤 시간 측정법</p>
+                <ul>
+                    <li>12시(時): 자시~해시 체계. 시간마다 종을 1번씩 타격.</li>
+                    <li>경(更)과 점(點): 밤 시간을 5경(1경은 다시 5점)으로 세분화. 경에는 북을 치고, 점에는 징을 침.</li>
+                    <li>인정(저녁 9시경) 때 28번의 종을, 파루(새벽 4시경) 때 33번의 북을 쳐 도성 문 개폐를 지시함.</li>
+                </ul>
+                <p>2. 역사적 변천과 현존 유물</p>
+                <p>조선 전기 ~ 중기 (세종에서 중종까지)</p>
+                <ul>
+                    <li>세종 대 (1433년~1434년): 장영실 등이 완성. 경복궁 경회루 남쪽 보루각(報漏閣)에 설치되어 '보루각루' 혹은 '금루(禁漏)'라 불림. (1438년에는 천체 변화까지 결합한 옥루를 제작하여 흠경각에서 관리함).</li>
+                    <li>기술의 전승 위기: 세종 사후 단종 대에는 보수 기술자가 단 1명만 남을 정도로 위기를 겪었고, 연산군 대(1505년)에는 보루각이 창덕궁으로 이전됨.</li>
+                    <li>중종 대의 개량 (1536년): 낡은 세종 대의 것을 대체하기 위해 창경궁에 새 보루각을 짓고 개량형 자격루를 제작함. (김근사, 김안로 주도 / 김수성 공사 전담 / 자격장 박세룡 등 제작 참여).</li>
+                </ul>
+                <p>현존 유물 현황 (국립고궁박물관 소장)</p>
+                세종 대의 자격루는 전해지지 않으며, 현재 남아있는 것은 1536년(중종 31)에 제작된 개량본의 일부입니다.
+                <li>남아있는 부품: 대형 파수호 1개, 소형 파수호 2개, 수수호 2개 및 제작 시기 미상의 잣대와 부전. 원래의 완벽한 자동 장치는 유실된 상태입니다.</li>
+                <li>명문과 보존처리: 파수호에 새겨진 ‘가정병신(嘉靖丙申, 1536년) 6월’ 명문으로 연대가 확실하며, 수수호에는 화려한 용 문양이 조각되어 있습니다. 일제강점기 덕수궁으로 옮겨졌던 것을 2018년 보존처리청에서 정밀 분석한 결과, 왼쪽 상단 명문에서 중종 대 제작에 참여한 도감 관리와 장인들의 명단이 모두 확인되었습니다. 2020년 국립고궁박물관으로 이전되어 보존 중입니다.</li>
+
+                <h2>앙부일구 (仰釜日晷)</h2>
+                <p>"하늘을 우러러보는 가마솥 모양의 해시계"</p>
+                <div class="profile_box">
+                    <div class="profile_img">
+                        <img src="science2_2.jpg" alt="앙부일구"> 
+                    </div>
+                    <div class="profile_info">
+                        <ul class="profile_info_list">
+                            <li><strong>이칭:</strong> 앙부일영(仰釜日影)</li>
+                            <li><strong>의의:</strong> 1434년(세종 16) 종로 혜정교 앞과 종묘 앞에 설치된 대한민국 최초의 공공·대중 시계.</li>
+                            <li><strong>창제 참여자:</strong> 이천, 장영실(후대 기록 기반 추정), 이순지(실록 졸기 기록 기반) 등..</li>
+                            <li><strong>참고 기구:</strong> 원나라의 '앙의(仰儀)'를 참고한 것으로 추정됨 (이순지의 『제가역상집』에 앙의의 구조가 서술됨).</li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div> 
+                </div>
+                <p>1. 앙부일구의 과학적 구조와 작동 원리</p>
+                하늘의 태양이 동쪽에서 서쪽으로 운행함에 따라, 앙부일구 내부의 그림자는 반대 방향인 서쪽에서 동쪽으로 움직이며 시간과 절기를 동시에 나타냅니다.
+                <ul>
+                    <li>수영면(受影面 / 시반면): 반구형으로 오목하게 파인 가마솥 모양의 면. 해그림자의 길이가 시간과 계절에 따라 달라지는 특성을 정확히 반영하기 위해 오목하게 제작됨.</li>
+                    <li>영침(影針): 수영면 안쪽에 비스듬히 고정된 뾰족한 침. 한양의 위도(북극고도 37도 30분)에 맞춰 설치됨.</li>
+                    <li>비정형 선(Line)의 배치: 정확한 측정을 위해 가로·세로 선의 간격이 일정하지 않게 설계됨
+                        <ul>
+                            <li>세로선 (시각선): 12시를 나타내는 선. 글을 모르는 백성들도 시간을 알 수 있도록 십이지신(十二支神) 그림을 그려 넣어 대중시계로서의 기능을 극대화함.</li>
+                            <li>가로선 (절기선): 계절별 태양 고도에 따른 그림자 길이를 측정하는 13개의 선. 그림자가 가장 긴 동지(가장 바깥쪽 선)부터 가장 짧은 하지(가장 안쪽 선)까지 파응함. (춘분·추분 중심선 주변은 간격이 넓고, 동지·하지로 갈수록 촘촘함).</li>
+                        </ul>
+                    </li>
+                    <li>십자 받침대: 네 개의 발이 지탱하며, 동서남북 방위를 맞추고 십자 홈에 물을 채워 정밀하게 수평을 잡음.</li>
+                </ul>
+                <p>2. 조선 후기~말기: 휴대용 해시계로의 진화</p>
+                세종 대의 공공시계로 출발한 앙부일구는 조선 후기로 갈수록 점차 소형화되어 개인이 소유하거나 가지고 다니는 휴대용 앙부일구로 발전했습니다. 청동, 돌(대리석), 자기, 상아 등 소재가 다양해졌으며 은상감 공예를 더해 예술적 가치를 높였습니다.
+                <p>스마트폰 1/4 크기의 하이테크 휴대용 앙부일구</p>
+                <ul>
+                    <li>오목한 반구형 중심에 침을 세우고, 언제 어디서나 방위를 맞출 수 있도록 소형 나침반(자석)을 부착함.</li>
+                    <li>강건(姜湕) 제작 앙부일구 (1871년, 국립중앙박물관 소장): 회백색 대리석 재질에 청동 영침과 나침반(24향 표시)을 부착함. 세로 5.6cm, 가로 3.4cm, 높이 2.0cm의 초소형 크기. (※ 오경석이 소장했던 1875년작 강건 제작 앙부일구는 현재 일본 교토 개인 소장).</li>
+                    <li>강문수(姜文秀) 제작 앙부일구 (1908년, 서울역사박물관 소장): 가로 3.1cm, 세로 7.2cm 크기. 아랫면에 서울의 정밀 위도인 '북극고 37도 39분 15초'를 새겨 넣어 표준을 삼음.</li>
+                </ul>
+                <p>족보: 시계 제작을 가업으로 이은 '진주 강씨' 가문</p>
+                조선 말기 휴대용 앙부일구의 정밀 제작은 명문가였던 진주 강씨 가문이 주도하고 전승했습니다.
+                강이오 (탁월한 예술적 재능을 지닌 문인화가 부친) -> 강건 (1871년 작 제작 주도, 한성판윤) & 강윤 (형) -> 강익수 & 강문수 (1908년 작 제작, 강건의 아들들)
+            </div>
+        </section>
+    </main>
+
+    <div class="clear"></div>
+
+    <footer>
+        <p>출처: 우리역사넷, 국가문화유산포털</p>
+        <p>COPYRIGHT © 202334650 Kim Hyeon Tae All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

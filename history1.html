@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>임진왜란·정유재란 페이지</title>
+    <style>
+       * { 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }  
+        body {
+            font-family: "맑은 고딕";
+            color: #2c2a29;               
+            background-image: url(hanji.jpg);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        [class*="c_"] {
+            float: left;
+            padding: 10px;
+        }
+        [class*="c_"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .c_m_1 {width: 8.33%;} .c_m_2 {width: 16.66%;} .c_m_3 {width: 25%;}
+            .c_m_4 {width: 33.33%;} .c_m_5 {width: 41.66%;} .c_m_6 {width: 50%;}
+            .c_m_7 {width: 58.33%;} .c_m_8 {width: 66.66%;} .c_m_9 {width: 75%;}
+            .c_m_10 {width: 83.33%;} .c_m_11 {width: 91.66%;} .c_m_12 {width: 100%;}
+        }
+        @media only screen and (max-width: 767px) {
+            #my_info { text-align: center; }
+            #sidebar { margin-bottom: 20px; } 
+        }
+
+        @media only screen and (min-width: 768px) {
+            .c_1 {width: 8.33%;} .c_2 {width: 16.66%;} .c_3 {width: 25%;}
+            .c_4 {width: 33.33%;} .c_5 {width: 41.66%;} .c_6 {width: 50%;}
+            .c_7 {width: 58.33%;} .c_8 {width: 66.66%;} .c_9 {width: 75%;}
+            .c_10 {width: 83.33%;} .c_11 {width: 91.66%;} .c_12 {width: 100%;}
+        }
+
+        .clear { clear: both; }
+
+        a:link, a:visited {
+            text-decoration: none;
+            color: white;
+        }
+        a:hover {
+            font-weight: bold;
+        }
+
+        header {
+            background-color: #232326; 
+            color: #ffffff;
+            padding: 20px 5% 0 5%;
+            border-bottom: 1px solid #702c2c;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        #my_info {
+            text-align: right;
+            color: #aaaaaa;
+        }
+
+        #main_menu {
+            text-align: center;
+            padding: 15px 0 0 0;
+        }
+        
+        #main_menu ul {
+            display: inline-block; 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #main_menu ul li {
+            display: inline-block;
+            position: relative; 
+            background: #3a3835; 
+            border: 1px solid #4a4845;
+            border-radius: 4px;
+            margin: 0 4px;
+            width: 150px;
+        }
+        #main_menu ul li a {
+            display: block;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        
+        #main_menu ul li:hover {
+            background: #702c2c; 
+        }
+
+        
+        #main_menu ul li:hover ul {
+            display: block;
+        }
+
+       
+        #main_menu ul li ul {
+            position: absolute;
+            top: 100%; 
+            left: -1px;
+            width: 150px; 
+            display: none;
+            z-index: 999;
+        }
+
+        
+        #main_menu ul li ul li {
+            background: #3a3835 !important; 
+            display: block;
+            width: 100%;
+            margin: 0;
+            border-top: none;
+        }
+
+        
+        #main_menu ul li ul li a {
+            display: block !important;
+            padding: 10px 0;
+            font-size: 11px;
+            color: #ffffff  ;
+            font-weight: normal;
+        }
+
+       
+        #main_menu ul li ul li:hover {
+            background: #702c2c !important; 
+        }
+        #main_menu ul li ul li:hover a {
+            color: white;
+        }
+        main { 
+            max-width: 1100px; 
+            width: 90%;
+            margin: 40px auto; 
+        }
+
+        
+        #sidebar {
+            background-color: #f4eedf; 
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #c8bda3;
+        }
+        .sub_menu_title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #702c2c; 
+            color: #2c2a29;
+        }
+        .sub_menu_list li {
+            margin-bottom: 8px;
+            list-style-type: none;
+        }
+        .sub_menu_list a {
+            display: block;
+            padding: 10px 12px;
+            background-color: #ffffff; 
+            border-radius: 5px;
+            border: 1px solid #c8bda3;
+            font-weight: bold;
+            color: #2c2a29;
+        }
+        .sub_menu_list a:hover {
+            background-color: #702c2c;
+            color: white; 
+        }
+
+        #content_body {
+            background-color: #fcfaf5;
+            border-radius: 8px;
+            min-height: 400px;
+            padding: 30px;
+            border: 1px solid #c8bda3;
+            
+        }
+        #content_body h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e3d7bf;
+            padding-bottom: 10px;
+            color: #1c1c1e;
+        }
+        #content_body p {
+            color: #2c2a29;
+            font-size: 13px;
+            line-height: 1.8;
+            padding: 5px 0;
+            font-weight: bold;
+        }
+
+        #content_body li {
+            margin-left: 25px;
+        }
+
+        .box {
+            background-color: #f4eedf; 
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #e3d7bf;
+            margin: 15px 0 25px 0;
+        }
+        
+        .image {
+            float: left;
+            width: 28%; 
+            margin-right: 4%;
+        }
+        
+        .image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            border: 1px solid #c8bda3;
+        }
+        
+        .info {
+            float: left;
+            width: 68%; 
+        }
+        
+        .inside {
+            list-style-type: disc !important;
+            margin-left: 15px !important;
+            padding: 0;
+        }
+        
+        .inside li {
+            font-size: 13px !important;
+            margin-bottom: 12px !important;
+            font-weight: normal !important; 
+        }
+        
+        .inside li strong {
+            color: #702c2c;
+        }
+       
+        footer {
+            background-color: #232326;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 11px;
+            border-top: 1px solid #3a3835;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="c_12">
+        <div id="logo" class="c_3 c_m_3"><a href="index.html"><img src="logo.png"></a></div>
+        <h1 class="c_6 c_m_6"><a href="index.html">조선 역사 아카이브</a></h1>
+        <div id="my_info" class="c_3 c_m_3">202334650 | 컴퓨터공학과 | 김현태</div>
+        <div class="clear"></div> 
+        
+        <nav id="main_menu">
+            <ul>
+                <li><a href="king.html">왕조실록</a>
+                    <ul class="dropdown">
+                        <li><a href="king1.html">태조</a></li>
+                        <li><a href="king2.html">태종</a></li>
+                        <li><a href="king3.html">세종</a></li>
+                        <li><a href="king4.html">영조</a></li>
+                        <li><a href="king5.html">정조</a></li>
+                    </ul>
+                </li>
+                <li><a href="history.html">역사적 사건</a>
+                    <ul class="dropdown">
+                        <li><a href="history1.html">임진왜란·정유재란</a></li>
+                        <li><a href="history2.html">병자호란</a></li>
+                        <li><a href="history3.html">동학농민운동</a></li>
+                    </ul>
+                </li>
+                <li><a href="person.html">역사적 인물</a>
+                    <ul class="dropdown">
+                        <li><a href="person1.html">이순신</a></li>
+                        <li><a href="person2.html">장영실</a></li>
+                        <li><a href="person3.html">정약용</a></li>
+                    </ul>
+                </li>
+                <li><a href="thing.html">문화와 예술</a>
+                    <ul class="dropdown">
+                        <li><a href="thing1.html">훈민정음</a></li>
+                        <li><a href="thing2.html">용비어천가</a></li>
+                        <li><a href="thing3.html">조선왕조의궤</a></li>
+                    </ul>
+                </li>
+                <li><a href="science.html">과학과 기술</a>
+                    <ul class="dropdown">
+                        <li><a href="science1.html">대동여지도</a></li>
+                        <li><a href="science2.html">자격루와 앙부일구</a></li>
+                        <li><a href="science3.html">거북선</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="clear"></div>
+
+    <main>
+        <section class="c_3 c_m_4">
+            <div id="sidebar">
+                <p class="sub_menu_title">역사적 사건</p>
+                <ul class="sub_menu_list">
+                    <li><a href="history1.html">임진왜란·정유재란</a></li>
+                    <li><a href="history2.html">병자호란</a></li>
+                    <li><a href="history3.html">동학농민운동</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="c_9 c_m_8">
+            <div id="content_body">
+                <h2>임진왜란·정유재란</h2>
+                <p>"동아시아 3국의 국제 대전, 조선의 끈질긴 저항으로 불패의 망상을 꺾다."</p>
+                <div class="box">
+                    <div class="image">
+                        <img src="history1.jpg"> 
+                    </div>
+                    <div class="info">
+                        <ul class="inside">
+                            <li><strong>정의:</strong> 도요토미 히데요시가 이끄는 일본군이 명나라 침략을 명분으로 조선을 침공하여, 조선·명나라·일본 삼국이 한반도에서 맞붙은 대규모 국제 전쟁.</li>
+                            <li><strong>주요 인물:</strong> 선조, 광해군, 이순신, 권율, 곽재우(조선) / 도요토미 히데요시, 고니시 유키나가, 가토 기요마사(일본) / 이여송, 심유경(명)</li>
+                            <li><strong>기간:</strong> 1592년 ~ 1598년</li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div> 
+                </div>
+                <p>1. 전쟁의 배경과 초기 패전 (1592년)</p>
+                <ul>
+                    <li>일본의 야망: 전국시대를 통일한 도요토미 히데요시가 대륙 침략의 망상을 품고 쓰시마섬 도주를 통해 조선에 복속 및 명나라 침공의 길잡이가 될 것을 요구함.</li>
+                    <li>조선의 대응: 1590년 통신사(황윤길, 김성일)를 파견했으나 침략 가능성에 대해 의견이 나뉨. 소극적인 방비에 그쳐 일본 전체의 국력을 동원한 전면전을 예측하지 못함.</li>
+                    <li>초기 참패와 선조의 피난: 1592년 4월 13일 고니시 등의 선봉군이 부산에 상륙. 정발(부산진), 송상현(동래)이 전사하고 신립의 탄금대 배수진마저 무너지자 선조는 수도 한성을 버리고 의주로 피난함(명나라 망명 시도). 광해군은 세자로서 분조(分朝)를 이끌며 의병 봉기를 촉구함.</li>
+                </ul>
+                <p>2. 전세의 역전: 수군, 의병, 그리고 명군의 참전</p>
+                <ul>
+                    <p>이순신의 수군 활약 (남해 제해권 장악)</p>
+                    <li>거북선과 판옥선을 앞세운 이순신의 탁월한 전술로 일본 수군을 연전연패시킴.</li>
+                    <li>한산도 대첩: 일본 수군을 대파하여 전라도 곡창지대 진출을 차단하고, 해로를 통한 일본군의 보급로를 완벽하게 끊어놓음. 히데요시는 해전 기피 명령을 내림.</li>
+                    <p>전국적인 의병 및 관군의 항전</p>
+                    <li>의병 봉기: 곽재우, 고경명, 조헌, 정문부 등 사대부들과 휴정(서산대사), 유정(사명대사) 등 승병들이 게릴라 전술로 일본군을 괴롭힘.</li>
+                    <li>관군의 승리: 김시민의 제1차 진주성 전투, 권율의 행주산성 전투로 일본군의 진격을 저지함.</li>
+                    <p>명나라 군대의 참전과 벽제관 전투</p>
+                    <li>조선의 구원 요청에 명나라는 이여송의 대군을 파견하여 평양성을 탈환함.</li>
+                    <li>그러나 한성으로 진격하던 명군이 벽제관 전투에서 패한 후, 전의를 잃고 강화교섭 노선으로 선회함.</li>
+                </ul>
+                <p>3. 지루한 강화교섭과 군제 정비 (1593 ~ 1596)</p>
+                <ul>
+                    <li>왜곡된 교섭: 명의 심유경과 일본의 고니시 주도로 교섭이 진행되었으나, 명은 일본의 철수를 원했고 히데요시는 조선 영토 할양 등을 요구하여 애초에 협상이 불가능했음(두 담당자가 본국을 속임). 조선은 배제된 교섭에 분노함.</li>
+                    <li>조선의 체제 정비: 명나라 병서 《기효신서》를 도입해 포수·사수·살수의 '삼수병' 기법을 고안하고, 수도 방위를 위한 훈련도감 설치 및 지방군의 속오법 편제를 단행함.</li>
+                </ul>
+                <p>4. 정유재란과 전쟁의 종결 (1597 ~ 1598)</p>
+                <ul>
+                    <li>정유재란 (1597년): 외교 속임수를 알게 된 히데요시가 재침을 명령함. 조선과 명군의 대비로 직산 전투 이후 일본군은 남부 해안가로 퇴각하여 왜성을 쌓고 장기전에 돌입함. (조선인의 코와 귀를 베어가는 만행을 저지름).</li>
+                    <li>명량해전과 울산성 전투: 삼도수군통제사로 복귀한 이순신이 명량해전에서 기적적인 승리를 거두며 다시 해상 주도권을 잡음. 조·명 연합군은 울산성 전투 등에서 일본군을 강하게 압박함.</li>
+                    <li>히데요시의 사망과 노량해전 (1598년): 1598년 8월 도요토미 히데요시가 사망하자 일본군은 철수를 시작함. 이순신은 명군 일각의 묵인 속에서 도망치려는 일본군을 끝까지 추격하여 노량해전에서 대승을 거두고 전사함. 이후 일본군이 완전히 철수하며 전쟁 종결.</li>
+                </ul>
+                <p>5. 전쟁이 남긴 막대한 피해와 영향</p>
+                <ul>
+                    <li>조선의 황폐화: 전 국토의 농토가 황폐해져 대기근이 발생했고, 경복궁, 종묘, 불국사 등 귀중한 문화재들이 불타 소실됨. 수많은 실록과 사초 등의 문서가 사라짐.</li>
+                    <li>역사의 기록: 유성룡은 전쟁의 참상을 반성하고 후세를 경계하기 위해 《징비록》을 집필함.</li>
+                    <li>동아시아 정세 변화: 조선은 사회·정치적 대전환기를 맞이했고, 명나라는 국력 소모로 쇠퇴하여 여진족(청나라)이 성장하는 계기가 됨. 일본은 정권이 교체되어 도쿠가와 이에야스의 에도 막부가 들어섬.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <div class="clear"></div>
+
+    <footer>
+        <p>출처: 우리역사넷, 국가유산포털</p>
+        <p>COPYRIGHT © 202334650 Kim Hyeon Tae All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

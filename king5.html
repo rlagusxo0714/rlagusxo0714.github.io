@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정조 페이지</title>
+    <style>
+       * { 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }  
+        body {
+            font-family: "맑은 고딕";
+            color: #2c2a29;               
+            background-image: url(hanji.jpg);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        [class*="c_"] {
+            float: left;
+            padding: 10px;
+        }
+        [class*="c_"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .c_m_1 {width: 8.33%;} .c_m_2 {width: 16.66%;} .c_m_3 {width: 25%;}
+            .c_m_4 {width: 33.33%;} .c_m_5 {width: 41.66%;} .c_m_6 {width: 50%;}
+            .c_m_7 {width: 58.33%;} .c_m_8 {width: 66.66%;} .c_m_9 {width: 75%;}
+            .c_m_10 {width: 83.33%;} .c_m_11 {width: 91.66%;} .c_m_12 {width: 100%;}
+        }
+        @media only screen and (max-width: 767px) {
+            #my_info { text-align: center; }
+            #sidebar { margin-bottom: 20px; } 
+        }
+
+        @media only screen and (min-width: 768px) {
+            .c_1 {width: 8.33%;} .c_2 {width: 16.66%;} .c_3 {width: 25%;}
+            .c_4 {width: 33.33%;} .c_5 {width: 41.66%;} .c_6 {width: 50%;}
+            .c_7 {width: 58.33%;} .c_8 {width: 66.66%;} .c_9 {width: 75%;}
+            .c_10 {width: 83.33%;} .c_11 {width: 91.66%;} .c_12 {width: 100%;}
+        }
+
+        .clear { clear: both; }
+
+        a:link, a:visited {
+            text-decoration: none;
+            color: white;
+        }
+        a:hover {
+            font-weight: bold;
+        }
+
+        header {
+            background-color: #232326; 
+            color: #ffffff;
+            padding: 20px 5% 0 5%;
+            border-bottom: 1px solid #702c2c;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        #my_info {
+            text-align: right;
+            color: #aaaaaa;
+        }
+
+        #main_menu {
+            text-align: center;
+            padding: 15px 0 0 0;
+        }
+        
+        #main_menu ul {
+            display: inline-block; 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #main_menu ul li {
+            display: inline-block;
+            position: relative; 
+            background: #3a3835; 
+            border: 1px solid #4a4845;
+            border-radius: 4px;
+            margin: 0 4px;
+            width: 150px;
+        }
+        #main_menu ul li a {
+            display: block;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        
+        #main_menu ul li:hover {
+            background: #702c2c; 
+        }
+
+        
+        #main_menu ul li:hover ul {
+            display: block;
+        }
+
+       
+        #main_menu ul li ul {
+            position: absolute;
+            top: 100%; 
+            left: -1px;
+            width: 150px; 
+            display: none;
+            z-index: 999;
+        }
+
+        
+        #main_menu ul li ul li {
+            background: #3a3835 !important; 
+            display: block;
+            width: 100%;
+            margin: 0;
+            border-top: none;
+        }
+
+        
+        #main_menu ul li ul li a {
+            display: block !important;
+            padding: 10px 0;
+            font-size: 11px;
+            color: #ffffff  ;
+            font-weight: normal;
+        }
+
+       
+        #main_menu ul li ul li:hover {
+            background: #702c2c !important; 
+        }
+        #main_menu ul li ul li:hover a {
+            color: white;
+        }
+        main { 
+            max-width: 1100px; 
+            width: 90%;
+            margin: 40px auto; 
+        }
+
+        
+        #sidebar {
+            background-color: #f4eedf; 
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #c8bda3;
+        }
+        .sub_menu_title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #702c2c; 
+            color: #2c2a29;
+        }
+        .sub_menu_list li {
+            margin-bottom: 8px;
+            list-style-type: none;
+        }
+        .sub_menu_list a {
+            display: block;
+            padding: 10px 12px;
+            background-color: #ffffff; 
+            border-radius: 5px;
+            border: 1px solid #c8bda3;
+            font-weight: bold;
+            color: #2c2a29;
+        }
+        .sub_menu_list a:hover {
+            background-color: #702c2c;
+            color: white; 
+        }
+
+        #content_body {
+            background-color: #fcfaf5;
+            border-radius: 8px;
+            min-height: 400px;
+            padding: 30px;
+            border: 1px solid #c8bda3;
+            
+        }
+        #content_body h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e3d7bf;
+            padding-bottom: 10px;
+            color: #1c1c1e;
+        }
+        #content_body p {
+            color: #2c2a29;
+            font-size: 13px;
+            line-height: 1.8;
+            padding: 5px 0;
+            font-weight: bold;
+        }
+
+        #content_body li {
+            margin-left: 25px;
+        }
+
+        .box {
+            background-color: #f4eedf; 
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #e3d7bf;
+            margin: 15px 0 25px 0;
+        }
+        
+        .image {
+            float: left;
+            width: 28%; 
+            margin-right: 4%;
+        }
+        
+        .image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            border: 1px solid #c8bda3;
+        }
+        
+        .info {
+            float: left;
+            width: 68%; 
+        }
+        
+        .inside {
+            list-style-type: disc !important;
+            margin-left: 15px !important;
+            padding: 0;
+        }
+        
+        .inside li {
+            font-size: 13px !important;
+            margin-bottom: 12px !important;
+            font-weight: normal !important; 
+        }
+        
+        .inside li strong {
+            color: #702c2c;
+        }
+
+        .inside li ul {
+            margin-top: 10px;
+        }
+
+        .inside li ul li::marker {
+            color: #702c2c;
+        }
+       
+        footer {
+            background-color: #232326;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 11px;
+            border-top: 1px solid #3a3835;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="c_12">
+        <div id="logo" class="c_3 c_m_3"><a href="index.html"><img src="logo.png"></a></div>
+        <h1 class="c_6 c_m_6"><a href="index.html">조선 역사 아카이브</a></h1>
+        <div id="my_info" class="c_3 c_m_3">202334650 | 컴퓨터공학과 | 김현태</div>
+        <div class="clear"></div> 
+        
+        <nav id="main_menu">
+            <ul>
+                <li><a href="king.html">왕조실록</a>
+                    <ul class="dropdown">
+                        <li><a href="king1.html">태조</a></li>
+                        <li><a href="king2.html">태종</a></li>
+                        <li><a href="king3.html">세종</a></li>
+                        <li><a href="king4.html">영조</a></li>
+                        <li><a href="king5.html">정조</a></li>
+                    </ul>
+                </li>
+                <li><a href="history.html">역사적 사건</a>
+                    <ul class="dropdown">
+                        <li><a href="history1.html">임진왜란·정유재란</a></li>
+                        <li><a href="history2.html">병자호란</a></li>
+                        <li><a href="history3.html">동학농민운동</a></li>
+                    </ul>
+                </li>
+                <li><a href="person.html">역사적 인물</a>
+                    <ul class="dropdown">
+                        <li><a href="person1.html">이순신</a></li>
+                        <li><a href="person2.html">장영실</a></li>
+                        <li><a href="person3.html">정약용</a></li>
+                    </ul>
+                </li>
+                <li><a href="thing.html">문화와 예술</a>
+                    <ul class="dropdown">
+                        <li><a href="thing1.html">훈민정음</a></li>
+                        <li><a href="thing2.html">용비어천가</a></li>
+                        <li><a href="thing3.html">조선왕조의궤</a></li>
+                    </ul>
+                </li>
+                <li><a href="science.html">과학과 기술</a>
+                    <ul class="dropdown">
+                        <li><a href="science1.html">대동여지도</a></li>
+                        <li><a href="science2.html">자격루와 앙부일구</a></li>
+                        <li><a href="science3.html">거북선</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="clear"></div>
+
+    <main>
+        <section class="c_3 c_m_4">
+            <div id="sidebar">
+                <p class="sub_menu_title">왕조실록</p>
+                <ul class="sub_menu_list">
+                    <li><a href="king1.html">태조</a></li>
+                    <li><a href="king2.html">태종</a></li>
+                    <li><a href="king3.html">세종</a></li>
+                    <li><a href="king4.html">영조</a></li>
+                    <li><a href="king5.html">정조</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="c_9 c_m_8">
+            <div id="content_body">
+                <h2>정조</h2>
+                <p>"학문과 무예를 겸비한 개혁 군주, 조선의 마지막 불꽃을 피우다."</p>
+                <div class="box">
+                    <div class="image">
+                        <img src="jeongjo.jpg"> 
+                    </div>
+                    <div class="info">
+                        <ul class="inside">
+                            <li><strong>이름:</strong> 이산 (李祘) / 자: 형운 (亨運)</li>
+                            <li><strong>가족 관계:</strong> 사도세자와 혜경궁 홍씨의 둘째 아들. 비(妃)는 효의왕후 김씨</li>
+                            <li><strong>즉위 배경:</strong> 11세 때 아버지 사도세자의 비극적인 죽음(임오화변)을 목격함. 이후 영조의 명에 따라 효장세자(진종)의 후사로 입적되어 왕위 계승권을 확고히 함. 척신 세력의 극심한 방해와 암살 위협을 극복하고 제22대 국왕으로 즉위함.</li>
+                            <li><strong>재위 기간:</strong> 1776년 ~ 1800년</li>
+                            <li><strong>명언 (즉위 일성):</strong> "아! 과인은 사도세자의 아들이다." (종통의 엄격함과 부모에 대한 효심을 동시에 천명)</li>
+                            <li><strong>대표 업적</strong>
+                            <ul>
+                                <li>왕실 도서 보관과 학문·정책 연구를 담당한 ‘규장각’ 설치</li>
+                                <li>국왕 호위 및 왕권 강화를 위한 친위 부대 '장용영' 창설</li>
+                                <li>거중기 등 기술을 활용해 ‘수원 화성’ 축조</li>
+                            </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div> 
+                </div>
+                <p>1. 정치 및 사상 개혁: 준론탕평과 명분론</p>
+                <ul>
+                    <li>준론탕평(峻論蕩平): 각 붕당의 무조건적인 연합을 추구했던 영조의 완론탕평과 달리, 각 붕당의 시시비비(옳고 그름)를 명백히 가리는 엄정한 정치를 추구함.</li>
+                    <li>탕평의 확대: 소외되었던 남인(채제공 등)과 소론(서명선 등)을 과감히 정승으로 등용하여 노론 일당 전제화를 견제함.</li>
+                    <li>문체반정(文體反正): 사대부들이 유희적인 글쓰기(소품문)에 빠져드는 것을 경계하고, 주자성리학의 전통적이고 바른 문체를 회복하도록 촉구함. 서학(천주교)에 대해서는 처벌보다는 유교적 교화와 교육을 우선시함.</li>
+                </ul>
+                <p>2. 개혁의 중심 기구: 규장각(奎章閣) 설치 (1776년)</p>
+                <ul>
+                    <li>목적: 왕실 도서관으로 출발했으나, 홍문관·사헌부 등의 권한을 아우르는 정조의 핵심 정치·학술 보좌 기구로 육성함. 외척과 척신 세력의 정치 참여를 원천 차단하는 방어막 역할을 함.</li>
+                    <li>초계문신제(抄啓文臣制): 젊고 유능한 관료들을 선발해 규장각에서 재교육하고 토론을 통해 개혁의 중심 인재로 키워냄.</li>
+                    <li>파격적 인재 등용: 가문이나 신분의 제약을 깨고 이덕무, 유득공, 박제가 등 능력 있는 서얼(서자) 출신 지식인들을 규장각 검서관으로 발탁하여 적극 중용함.</li>
+                </ul>
+                <p>3. 경제 및 사회 개혁과 신도시 '화성' 건설</p>
+                <ul>
+                    <li>신도시 화성(수원) 건설: 아버지 사도세자의 묘소를 수원(현 융릉)으로 옮기며 정조의 정치적 이상을 실현할 계획도시를 건설함. 새로운 성곽 축조 기술을 도입하고 국영 농장인 둔전을 설치함. (향후 1804년 세자에게 양위한 후 상왕으로서 머물고자 했던 행도이기도 함).</li>
+                    <li>통공 정책 (신해통공, 1791년): 시전 상인들이 가졌던 독점 상업권인 '금난전권'을 폐지하여, 난전(자유 상인)의 활동을 보장하고 물가를 안정시킴으로써 경제 활성화를 도모함.</li>
+                    <li>재정 일원화: 궁방의 토지 일부를 백성에게 돌려주고 국가 재정을 호조로 일원화하는 방안을 추진해 국가 재정 건전화를 꾀함.</li>
+                </ul>
+                <p>4. 만년과 최후</p>
+                <ul>
+                    <li>만천명월주인옹(萬川明月主人翁): 만개의 천을 비추는 밝은 달과 같은 존재, 즉 백성을 사랑하고 변화시키는 '임금이이자 스승(君師)'으로서의 무거운 책무감을 스스로 자처함.</li>
+                    <li>최후: 1800년 수많은 개혁 구상을 남겨둔 채 갑작스럽게 승하함(향년 49세). 능호는 건릉(健陵)으로 경기도 화성시에 있으며, 아버지 사도세자의 융릉 옆에 나란히 안장됨. 정조의 사후 조선은 외척들이 권력을 독점하는 '세도정치' 시기로 접어들게 됨.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <div class="clear"></div>
+
+    <footer>
+        <p>출처: 우리역사넷, 전통문화포털 | 작성자: 김현태 (202334650)</p>
+        <p>COPYRIGHT © 202334650 Kim Hyeon Tae All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
